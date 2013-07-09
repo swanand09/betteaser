@@ -7,8 +7,11 @@ session_start();
 
 //main menu links
 //require_once '\utility\ClassMembership.php';
-
-if ($_SESSION['status'] != 'authorized') {
+$toplinks = "";
+$hdrlinks = "";
+$hdrlogo  = "";
+$hdrAccountLink = "";
+if (isset($_SESSION['status'])&&$_SESSION['status'] != 'authorized') {
     $toplinks = "
                 <ul>
                     <li><a href='../'>HOME</a></li>
@@ -29,7 +32,7 @@ if ($_SESSION['status'] != 'authorized') {
 
 //header logo
     $hdrlogo = "<h1><a href='index.php'>BetTeaser</a></h1>";
-}else{
+}else if(isset($_SESSION['clientUsn'])){
     $toplinks = "
                 <ul>
                     

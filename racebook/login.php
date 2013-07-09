@@ -13,7 +13,7 @@ if (isset($_SESSION['status'])&&$_SESSION['status'] == 'authorized'){
 $membership = new Membership();
 //$membership->confirm_Member();
     
-    
+    $msg = "";
     if (isset($_POST['login']) && !empty($_POST['username']) && !empty($_POST['password'])){
         $pUsn=strtolower($_POST['username']);
         $pUsn=mysql_real_escape_string($pUsn);
